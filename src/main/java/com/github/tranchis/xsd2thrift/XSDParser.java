@@ -455,7 +455,7 @@ public class XSDParser implements ErrorHandler {
 			String baseTypeName = typeName;
 			while (xs != null && !basicTypes.contains(baseTypeName)) {
 				xs = xs.getBaseType().asSimpleType();
-				if (xs != null) {
+				if (xs != null && xs.getName() != null) {
 					baseTypeName = xs.getName();
 				}
 			}
