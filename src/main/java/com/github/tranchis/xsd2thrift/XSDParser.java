@@ -126,6 +126,7 @@ public class XSDParser implements ErrorHandler {
 		basicTypes.add("IDREF");
 		basicTypes.add("NMTOKEN");
 		basicTypes.add("NMTOKENS");
+		basicTypes.add("duration");
 		// basicTypes.add("BaseObject");
 	}
 
@@ -261,6 +262,9 @@ public class XSDParser implements ErrorHandler {
 			}
 			if (type.equals(fname)) {
 				fname = "_" + fname;
+			}
+			if (type.equals("duration")) {
+			  type = "Duration";
 			}
 
 			String typeNameSpace = "";
